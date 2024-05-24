@@ -1,18 +1,43 @@
-This repository implements a Reverse Polish Notation (RPN) calculator in C. It provides a command-line interface for evaluating RPN expressions and supports basic arithmetic operations (+, -, *, /).
+# Reverse Polish Notation Calculator
 
-Key Features:
+This repository contains a simple implementation of a Reverse Polish Notation (RPN) calculator in C. RPN, also known as postfix notation, is a mathematical notation in which every operator follows all of its operands. This calculator evaluates expressions in RPN format using a stack data structure.
 
-RPN Evaluation: Evaluates Reverse Polish Notation expressions.
-Basic Arithmetic: Supports addition, subtraction, multiplication, and division.
-Error Handling: Includes basic checks for invalid expressions and division by zero (expand on this if you plan to implement more robust error handling).
+## Features
 
-This repository is ideal for:
+- Supports basic arithmetic operations: addition (+), subtraction (-), multiplication (*), and division (/).
+- Handles operands as integers.
+- Provides error handling for division by zero and invalid characters in expressions.
 
-Students learning RPN and its evaluation.
-Developers seeking a simple RPN calculator implementation in C.
-Anyone who wants to explore and contribute to a collaborative coding project.
+## How to Run
 
-Feel free to:
+### Prerequisites
+- C Compiler (e.g., GCC)
 
-Fork this repository and contribute your own features or improvements.
-Report any issues or bugs you encounter.
+### Steps
+1. Clone the repository to your local machine:
+    ```bash
+    git clone https://github.com/your_username/rpn-calculator.git
+    ```
+2. Navigate to the repository directory:
+    ```bash
+    cd rpn-calculator
+    ```
+3. Compile the source code:
+    ```bash
+    gcc main.c -o rpn_calculator
+    ```
+4. Run the executable:
+    ```bash
+    ./rpn_calculator
+    ```
+5. Enter Reverse Polish Notation expressions when prompted. Separate each expression by spaces and press Enter after each expression.
+
+## Example
+```
+Enter Reverse Polish Notation expressions (separated by spaces): 5 3 +
+Result: 8
+```
+
+## Usage Tips
+- Ensure each expression is in valid RPN format with appropriate spaces separating operands and operators.
+- Remember that RPN does not require parentheses for grouping; it follows a strict left-to-right evaluation order.

@@ -78,5 +78,11 @@ void processInstruction(char instruction, Stack *s) {
         default:
             printf("Invalid instruction: %c\n", instruction);
             exit(1);
-    }
+    }
 }
+
+int main() {
+    Stack stack;
+    initStack(&stack);
+}
+

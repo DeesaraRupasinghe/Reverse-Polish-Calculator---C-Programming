@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
@@ -20,3 +21,5 @@ int isFull(Stack *s) {
 int isEmpty(Stack *s) {
     return s->top == -1;
 }
+
+

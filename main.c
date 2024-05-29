@@ -36,3 +36,13 @@ double pop(Stack *s) {
     }
     return s->data[s->top--];
 }
+
+
+double peek(Stack *s) {
+    if (isEmpty(s)) {
+        printf("Stack is empty\n");
+        exit(1);
+    }
+    return s->data[s->top];
+}
+

@@ -46,3 +46,40 @@ double peek(Stack *s) {
     return s->data[s->top];
 }
 
+
+void processInstruction(char instruction, Stack *s) {
+    double a, b;
+    switch (instruction) {
+        case '+':
+            b = pop(s);
+            a = pop(s);
+            push(s, a + b);
+            break;
+        case '-':
+            b = pop(s);
+            a = pop(s);
+            push(s, a - b);
+            break;
+        case '*':
+            b = pop(s);
+            a = pop(s);
+            push(s, a * b);
+            break;
+        case '/':
+            b = pop(s);
+            a = pop(s);
+            if (b == 0) {
+                printf("Division by zero error\n");
+                exit(1);
+            }
+            push(s, a / b);
+            break;
+        case '=':
+            printf("%lf\n", peek(s));
+            break;
+        default:
+            printf("Invalid instruction: %c\n", instruction);
+            exit(1);
+    }
+}
+

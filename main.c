@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
@@ -20,7 +21,6 @@ int isFull(Stack *s) {
 int isEmpty(Stack *s) {
     return s->top == -1;
 }
-
 void push(Stack *s, double value) {
     if (isFull(s)) {
         printf("Stack overflow\n");
@@ -37,6 +37,7 @@ double pop(Stack *s) {
     return s->data[s->top--];
 }
 
+
 double peek(Stack *s) {
     if (isEmpty(s)) {
         printf("Stack is empty\n");
@@ -44,6 +45,7 @@ double peek(Stack *s) {
     }
     return s->data[s->top];
 }
+
 
 void processInstruction(char instruction, Stack *s) {
     double a, b;
@@ -78,5 +80,6 @@ void processInstruction(char instruction, Stack *s) {
         default:
             printf("Invalid instruction: %c\n", instruction);
             exit(1);
-    }
+    }
 }
+

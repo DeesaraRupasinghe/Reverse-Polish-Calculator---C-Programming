@@ -83,15 +83,22 @@ void processInstruction(char instruction, Stack *s) {
     }
 }
 
-int main() {
-    Stack stack;
-    initStack(&stack);
+void parseAndProcessInput(char *input, Stack *stack) {
+    char *ptr = input;
+    while (*ptr != '\0') {
+        if (isspace(*ptr)) {
+            ptr++;
+            continue;
+        }
 
-    char input[100];
-    printf("Enter RPN expression (separated by spaces and end with '='): ");
-    fgets(input, sizeof(input), stdin);
-
-    parseAndProcessInput(input, &stack);
-
-    return 0;
+        if (isdigit(ptr) || (*ptr == '-' && isdigit((ptr + 1)))) {
+            char *end;
+            double value = strtod(ptr, &end);
+            push(stack, value);
+            ptr = end;
+        } else {
+            processInstruction(*ptr, stack);
+            ptr++;
+        }
+    }
 }

@@ -83,22 +83,4 @@ void processInstruction(char instruction, Stack *s) {
     }
 }
 
-void parseAndProcessInput(char *input, Stack *stack) {
-    char *ptr = input;
-    while (*ptr != '\0') {
-        if (isspace(*ptr)) {
-            ptr++;
-            continue;
-        }
 
-        if (isdigit(ptr) || (*ptr == '-' && isdigit((ptr + 1)))) {
-            char *end;
-            double value = strtod(ptr, &end);
-            push(stack, value);
-            ptr = end;
-        } else {
-            processInstruction(*ptr, stack);
-            ptr++;
-        }
-    }
-}

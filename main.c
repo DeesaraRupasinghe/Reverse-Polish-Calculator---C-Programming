@@ -102,3 +102,16 @@ void parseAndProcessInput(char *input, Stack *stack) {
         }
     }
 }
+
+int main() {
+    Stack stack;
+    initStack(&stack);
+
+    char input[100];
+    printf("Enter RPN expression (separated by spaces and end with '='): ");
+    fgets(input, sizeof(input), stdin);
+
+    parseAndProcessInput(input, &stack);
+
+    return 0;
+}

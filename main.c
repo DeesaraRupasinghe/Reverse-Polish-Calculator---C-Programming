@@ -99,9 +99,9 @@ void parseAndProcessInput(char *input, Stack *stack) {
         } else {
             processInstruction(*ptr, stack);
             ptr++;
-        }
-    }
-}
+            }
+        }
+    }
 
 int main() {
     Stack stack;
